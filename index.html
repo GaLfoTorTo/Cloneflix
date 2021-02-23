@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="icon/all.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/estilo.css">
 	<title>Cloneflix</title>
 </head>
@@ -26,7 +27,7 @@
 
 	<main>
 		<div class="mainContent">
-			<div class="row">
+			<section class="row">
 				<div class="col-md-8 offset-2 cardTitulo">
 					<img class="tituloLogo" src="./img/Peaky_Blinders_Logo.png">
 					<p class="tituloSerie">Peaky Blinders: Sangue, Apostas e Navalhas</p>
@@ -47,14 +48,59 @@
 					<p class="sinopseSerie">Uma notória gangue da Inglaterra de 1919 é liderada pelo cruel Tommy Shelby, um criminoso disposto a subir na vida a qualquer preço.</p>
 				</div>
 				<div class="col-md-8 offset-2 botoes">
-					<button class="assistir">Asistir agora</button>
-					<button class="lembrete">Lembre-me</button>
+					<button class="assistir"><i class="fas fa-play iconButton"></i>Assistir agora</button>
+					<button class="lembrete"><i class="fas fa-bell iconButton"></i>Lembre-me</button>
 				</div>
 			</div>
-		</div>
+		</section>
+		<section class="row">
+			<div class="secaoTitulo">
+			  	<h2 class="titulo" >Series</h2>
+			</div>
+			<div class="carousel">
+				<div class="botoesCarousel">
+				    <button type="button" data-bs-slide-to="0" class="botaoCarousel" aria-label="Slide 1"></button>
+				    <button type="button" data-bs-slide-to="1" class="botaoCarousel" aria-label="Slide 2"></button>
+				    <button type="button" data-bs-slide-to="2" class="botaoCarousel" aria-label="Slide 3"></button>
+				    <button type="button" data-bs-slide-to="3" class="botaoCarousel" aria-label="Slide 4"></button>
+				    <button type="button" data-bs-slide-to="4" class="botaoCarousel" aria-label="Slide 5"></button>
+
+				</div>
+				<div class="items">
+					<div class="item">
+						<img class="imgCarousel" src="./img/vikings.jpg">
+					</div>
+					<div class="item">
+						<img class="imgCarousel" src="./img/laCasaDePapel.jpg">
+					</div>
+					<div class="item">
+						<img class="imgCarousel" src="./img/brooklyn99.jpeg">
+					</div>
+					<div class="item">
+						<img class="imgCarousel" src="./img/lucifer.jpg">
+					</div>
+					<div class="item">
+						<img class="imgCarousel" src="./img/theWitcher.jpg">
+					</div>
+				</div>				
+			</div>		
+		</section>
 	</main>
 
     <script src="jquery/jquery-3.5.1.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
+	<script >
+		$('.carousel').carousel({
+			interval: 5000
+		})
+		document.querySelector('.items')
+		.addEventListener("wheel", event => {
+			if(event.deltaY < 0) {
+				event.target.scrollBy(200, 0)
+			}else {
+				event.target.scrollBy(-200, 0)
+			}
+		})
+	</script>
 </body>
 </html>
